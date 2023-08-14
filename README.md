@@ -24,7 +24,7 @@ The React Notebook Web App is a user-friendly application designed to help you o
 
 3. **Configuration:** Configure API endpoints in the app to connect to your backend server.
 
-4. **Run the App:** Launch the app locally with `npm start`.
+4. **Run the App:** Launch the app locally with `npm run startapp`.
 
 5. **Access the App:** Open your browser and go to `http://localhost:3000`.
 
@@ -32,7 +32,7 @@ The React Notebook Web App is a user-friendly application designed to help you o
 
 - **React:** Frontend built using React, a JavaScript library for building user interfaces.
 - **APIs:** Communicates with APIs to perform CRUD operations.
-- **Styling:** Styling achieved using CSS.
+- **Styling:** Styling achieved using bootstrap.
 - **Version Control:** Project versioned using Git.
 
 
