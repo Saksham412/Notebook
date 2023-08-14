@@ -3,6 +3,7 @@ import noteContext from '../context/notes/noteContext'
 import Noteitem from './Noteitem'
 import AddNote from './AddNote'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
+
 const Notes = (props) => {
   const context = useContext(noteContext)
   const { notes, getNotes, editNote } = context
@@ -20,7 +21,7 @@ const Notes = (props) => {
   const ref = useRef(null)
   const refClose = useRef(null)
   const [note, setNote] = useState({ id: "", etitle: "", edescription: "", etag: "" })
-  
+
   const handleClick = (e) => {
     editNote(note.id, note.etitle, note.edescription, note.etag)
     refClose.current.click()
@@ -80,9 +81,15 @@ const Notes = (props) => {
         <div className="container mx-2">
           {notes.length === 0 && 'No notes to display'}
         </div>
-        {notes.map((note) => {
-          return <Noteitem key={note._id} updateNote={updateNote} showAlert={props.showAlert} note={note} />
-        })}
+        {
+          (notes && notes.length > 0)
+            ?
+            notes.map((note) => {
+              return <Noteitem key={note._id} updateNote={updateNote} note={note} />
+            })
+            :
+            null
+        }
       </div>
     </>
   )
